@@ -75,9 +75,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <FixedTop isscrolly={isScrolledY}>
-        <Container>
-          <Navbar links={navItems} />
-        </Container>
+        <Navbar links={navItems} />
       </FixedTop>
     </HeaderContainer>
   )

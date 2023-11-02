@@ -18,7 +18,7 @@ const MenuItem = styled.li<{ active: boolean }>`
     color: ${({ active }) => (active ? '#1C35EC' : '#666')};
 
     &:hover {
-      color: #2429af;
+      color: #000000;
     }
   }
 
