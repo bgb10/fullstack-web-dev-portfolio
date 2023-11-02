@@ -27,27 +27,27 @@ const FixedTop = styled.div<{ isscrolly: Boolean }>`
 
 const navItems = [
   {
-    href: '/About',
+    href: '/about',
     name: 'About'
   },
   {
-    href: '/Experience',
+    href: '/experience',
     name: 'Experience'
   },
   {
-    href: '/Education',
+    href: '/education',
     name: 'Education'
   },
   {
-    href: '/Project',
+    href: '/project',
     name: 'Project'
   },
   {
-    href: '/Skill',
+    href: '/skill',
     name: 'Skill'
   },
   {
-    href: '/Contact',
+    href: '/contact',
     name: 'Contact'
   }
 ]
