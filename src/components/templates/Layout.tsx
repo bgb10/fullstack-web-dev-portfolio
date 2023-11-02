@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import styled from 'styled-components'
 import Header from '@components/organisms/Header'
 
-const Container = styled.div`
+const LayoutContainer = styled.div`
   min-height: 100vh;
   max-width: 100%;
   margin: 0 auto;
@@ -14,9 +14,9 @@ type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => (
-  <Container>
+  <LayoutContainer>
     <Header />
-  </Container>
+  </LayoutContainer>
 )
 
 export default Layout
