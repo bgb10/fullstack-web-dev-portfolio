@@ -1,7 +1,7 @@
 import Container from '@components/atoms/Container'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Navbar from './Navbar'
+import Navbar from '@components/molecules/Navbar'
 
 const HeaderContainer = styled.header`
   display: flex;
