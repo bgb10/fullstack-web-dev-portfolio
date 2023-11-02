@@ -1,11 +1,8 @@
 import Item, { ItemProps } from '@components/molecules/Item'
 import { DurationType } from '@components/types'
 import styled from 'styled-components'
-import NestedList, { NestedListItemType } from '@components/NestedList'
+import { ReactNode } from 'react'
 
-/**
- * Styled item header container.
- */
 const ItemHeader = styled.div<ItemProps>`
   display: flex;
   align-items: flex-start;
@@ -21,16 +18,10 @@ const ItemHeader = styled.div<ItemProps>`
   }
 `
 
-/**
- * Styled item body container.
- */
 const ItemBody = styled.div<ItemProps>`
   width: ${({ horizontal = false }) => (horizontal ? '80%' : '100%')};
 `
 
-/**
- * Styled item header title.
- */
 const ItemHeaderTitle = styled.h5<ItemProps>`
   font-weight: 500;
   margin-bottom: ${({ horizontal }) => (horizontal ? '10px' : '0px')};
@@ -40,9 +31,6 @@ const ItemHeaderTitle = styled.h5<ItemProps>`
   }
 `
 
-/**
- * Styled item header content.
- */
 const ItemHeaderInfo = styled.div<ItemProps>`
   display: flex;
   flex-direction: ${({ horizontal }) => (horizontal ? 'column' : 'row')};
@@ -73,31 +61,16 @@ const ItemHeaderInfo = styled.div<ItemProps>`
   }
 `
 
-/**
- * Resume list item component props.
- *
- * @property {string} title A title of list item.
- * @property {string} label A label text of list item.
- * @property {Date | DurationType} duration Something period.
- * @property {string} description Additional description.
- * @property {NestedListItemType<string>[]} details a details of something.
- * @property {boolean} horizontal List item should be horizontal. (default: false)
- */
 type ResumeListItemProps = {
   title: string
   label?: string
-  duration: Date | DurationType
+  duration?: Date | DurationType
   description?: string
   details: string
   horizontal?: boolean
+  children?: ReactNode
 }
 
-/**
- * Convert Date type to string.
- *
- * @param date date data
- * @returns string
- */
 const formatDate = (date: Date = new Date()) => {
   const month = date.getMonth() + 1
   const formattedMonth = month >= 10 ? month : '0' + month
@@ -105,12 +78,6 @@ const formatDate = (date: Date = new Date()) => {
   return date.getFullYear() + '.' + formattedMonth
 }
 
-/**
- * Create duration header text.
- *
- * @param duration period or date.
- * @returns duration text.
- */
 const createHeaderInfoDuration = (duration: Date | DurationType) =>
   duration instanceof Date
     ? formatDate(duration)
@@ -120,19 +87,14 @@ const createHeaderInfoDuration = (duration: Date | DurationType) =>
       ' - ' +
       (duration.isCompleted ? formatDate(duration.endedAt) : 'Present')
 
-/**
- * Default list item for resume.
- *
- * @param {ResumeListItemProps}
- * @returns {React.FC}
- */
 const ResumeListItem: React.FC<ResumeListItemProps> = ({
   title,
   label = '',
   duration,
   description,
   details,
-  horizontal
+  horizontal,
+  children
 }) => (
   <Item horizontal={horizontal}>
     <ItemHeader
@@ -151,7 +113,7 @@ const ResumeListItem: React.FC<ResumeListItemProps> = ({
             {label}
           </span>
         )}
-        <span>{createHeaderInfoDuration(duration)}</span>
+        {duration && <span>{createHeaderInfoDuration(duration)}</span>}
       </ItemHeaderInfo>
     </ItemHeader>
     <ItemBody>
@@ -162,6 +124,7 @@ const ResumeListItem: React.FC<ResumeListItemProps> = ({
       )}
       <div>{details}</div>
     </ItemBody>
+    {children}
   </Item>
 )
 
