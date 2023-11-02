@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import '../styles.css'
+import Layout from '@components/templates/Layout'
 
 /**
  * Custom App component in Next.js.
@@ -13,5 +14,9 @@ import '../styles.css'
  * @returns {JSX.Element} The rendered App component with the specific page component and its props
  */
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
