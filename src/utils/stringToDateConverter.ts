@@ -1,15 +1,16 @@
-export default function stringToDateConverter(data: any) {
+export default function stringToDateConverter(data: any, section: string) {
   const updatedData = JSON.parse(JSON.stringify(data)) // Deep copy to avoid modifying the original object
 
-  updatedData.experiences.forEach(
-    (experience: {
+  console.log(updatedData)
+  updatedData[`${section}`].forEach(
+    (inner: {
       duration: {
         startedAt: string | number | Date
         endedAt: string | number | Date
       }
     }) => {
-      experience.duration.startedAt = new Date(experience.duration.startedAt)
-      experience.duration.endedAt = new Date(experience.duration.endedAt)
+      inner.duration.startedAt = new Date(inner.duration.startedAt)
+      inner.duration.endedAt = new Date(inner.duration.endedAt)
     }
   )
 
