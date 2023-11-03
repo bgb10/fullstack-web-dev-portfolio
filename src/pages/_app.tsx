@@ -1,6 +1,8 @@
 import type { AppProps } from 'next/app'
 import '../styles.css'
 import Layout from '@components/templates/Layout'
+import client from '../queries/apolloClient'
+import { ApolloProvider } from '@apollo/client'
 
 /**
  * Custom App component in Next.js.
@@ -16,7 +18,9 @@ import Layout from '@components/templates/Layout'
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+      </ApolloProvider>
     </Layout>
   )
 }
