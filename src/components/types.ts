@@ -30,7 +30,7 @@ export interface EducationType {
   isDegreeProgram: boolean
   degree?: DegreeType
   duration: DurationType
-  details: string
+  details: DetailType
 }
 
 export interface ProjectType {
