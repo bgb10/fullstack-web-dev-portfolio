@@ -27,7 +27,7 @@ export default function Experience() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error : {error.message}</p>
 
-  const convertedData = stringToDateConverter(data)
+  const convertedData = stringToDateConverter(data, 'experiences')
 
   return (
     <>
