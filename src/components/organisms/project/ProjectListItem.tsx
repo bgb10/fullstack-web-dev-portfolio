@@ -1,5 +1,5 @@
 import ResumeListItem from '@components/organisms/ResumeListItem'
-import { ProjectType } from '@components/types'
+import { ProjectType } from 'src/types'
 
 const ProjectListItem: React.FC<ProjectType> = ({
   name,

@@ -1,4 +1,4 @@
-import { EducationType } from '@components/types'
+import { EducationType } from 'src/types'
 import Heading from '@components/molecules/Heading'
 import EducationListItem from '@components/organisms/education/EducationListItem'
 

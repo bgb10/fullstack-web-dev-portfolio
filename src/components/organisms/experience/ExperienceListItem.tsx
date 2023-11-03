@@ -1,5 +1,5 @@
 import ResumeListItem from '@components/organisms/ResumeListItem'
-import { ExperienceType } from '@components/types'
+import { ExperienceType } from 'src/types'
 
 const ExperienceListItem: React.FC<ExperienceType> = ({
   company,

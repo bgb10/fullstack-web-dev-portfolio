@@ -1,5 +1,5 @@
 import Item, { ItemProps } from '@components/molecules/Item'
-import { DetailType, DurationType } from '@components/types'
+import { DetailType, DurationType } from 'src/types'
 import styled from 'styled-components'
 import { ReactNode } from 'react'
 import { RichText } from '@graphcms/rich-text-react-renderer'

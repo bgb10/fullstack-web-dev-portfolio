@@ -1,5 +1,5 @@
 import ResumeListItem from '@components/organisms/ResumeListItem'
-import { EducationType } from '@components/types'
+import { EducationType } from 'src/types'
 
 const createEducationTitle = (institution: string, country: string) =>
   institution + ', ' + country

@@ -1,4 +1,4 @@
-import { ExperienceType } from '@components/types'
+import { ExperienceType } from 'src/types'
 import ExperienceListItem from '@components/organisms/experience/ExperienceListItem'
 import Heading from '@components/molecules/Heading'
 

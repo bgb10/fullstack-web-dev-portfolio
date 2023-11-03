@@ -1,4 +1,4 @@
-import { ExperienceType, EducationType, ProjectType } from '@components/types'
+import { ExperienceType, EducationType, ProjectType } from 'src/types'
 
 export const experienceList: ExperienceType[] = [
   {

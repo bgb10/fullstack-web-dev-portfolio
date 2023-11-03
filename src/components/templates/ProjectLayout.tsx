@@ -1,4 +1,4 @@
-import { ProjectType } from '@components/types'
+import { ProjectType } from 'src/types'
 import Heading from '@components/molecules/Heading'
 import ProjectListItem from '@components/organisms/project/ProjectListItem'
 
