@@ -9,8 +9,14 @@ const MainHeaderWrapper = styled.div`
   display: flex;
   gap: 1.75rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     flex-direction: column;
+  }
+`
+
+const MainHeaderWrapperReverse = styled(MainHeaderWrapper)`
+  @media (max-width: 960px) {
+    flex-direction: column-reverse;
   }
 `
 
@@ -25,20 +31,29 @@ const Profile = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
+  align-items: center;
+  justify-content: center;
 `
 
-const ProfileImg = styled.div`
+const ProfileImg = styled.div<{ src: string }>`
   height: 500px;
-  background-image: url('https://media.graphassets.com/vwK29XG1QFk6tpmAFKQD');
+  background-image: url(${({ src }) => src});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 `
 
+const Border = styled.hr`
+  width: 50%;
+`
+
 const query = gql`
-  query introduction {
-    introduction(where: { id: "cloi8ce0c9hxf0a12wu4axih8" }) {
+  query MyQuery {
+    introductions {
       description
+      selfie {
+        url
+      }
     }
   }
 `
@@ -51,13 +66,35 @@ export default function About(props: Props) {
   return (
     <>
       <MainHeaderWrapper>
-        <Heading title="Gwan-Bin Park">
+        <Heading title="Gwan-Bin Park" description="Friendly and Passionate">
           <MainHeaderContent>
-            {data['introduction']['description']}
+            {data['introductions'][0]['description']}
           </MainHeaderContent>
         </Heading>
         <Profile>
-          <ProfileImg />
+          <ProfileImg src="https://media.graphassets.com/vwK29XG1QFk6tpmAFKQD" />
+        </Profile>
+      </MainHeaderWrapper>
+      <Border></Border>
+      <MainHeaderWrapperReverse>
+        <Profile>
+          <ProfileImg src="https://media.graphassets.com/ntCLm6TjTIKFYrMWbtUO" />
+        </Profile>
+        <Heading title="My Character">
+          <MainHeaderContent>
+            {data['introductions'][1]['description']}
+          </MainHeaderContent>
+        </Heading>
+      </MainHeaderWrapperReverse>
+      <Border></Border>
+      <MainHeaderWrapper>
+        <Heading title="My Hobbies">
+          <MainHeaderContent>
+            {data['introductions'][2]['description']}
+          </MainHeaderContent>
+        </Heading>
+        <Profile>
+          <ProfileImg src="https://media.graphassets.com/ZKXEDQJSaW6nKfXuDBuQ" />
         </Profile>
       </MainHeaderWrapper>
     </>
