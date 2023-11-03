@@ -36,17 +36,17 @@ export interface EducationType {
 export interface ProjectType {
   name: string
   description: string
-  details: string
-  skills: SkillType[]
+  details: DetailType
+  skills: SkillType
 }
 
 export interface SkillType {
-  name: string
+  skill: string[]
 }
 
 export interface CourseWorkType {
   name: string
   duration: DurationType
   details: string
-  skills: SkillType[]
+  skills: SkillType
 }
