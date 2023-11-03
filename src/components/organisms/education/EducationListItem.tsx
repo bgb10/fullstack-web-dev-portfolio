@@ -21,7 +21,9 @@ const EducationListItem: React.FC<EducationType> = ({
   return (
     <ResumeListItem
       title={createEducationTitle(institution, country)}
-      description={isDegreeProgram ? _degree() + ' | ' + degree?.gpa : ''}
+      description={
+        isDegreeProgram ? _degree() + ' | ' + 'GPA: ' + degree?.gpa : ''
+      }
       duration={duration}
       details={details}
     />
