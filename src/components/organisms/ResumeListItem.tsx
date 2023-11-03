@@ -1,7 +1,8 @@
 import Item, { ItemProps } from '@components/molecules/Item'
-import { DurationType } from '@components/types'
+import { DetailType, DurationType } from '@components/types'
 import styled from 'styled-components'
 import { ReactNode } from 'react'
+import { RichText } from '@graphcms/rich-text-react-renderer'
 
 const ItemHeader = styled.div<ItemProps>`
   display: flex;
@@ -66,7 +67,7 @@ type ResumeListItemProps = {
   label?: string
   duration?: Date | DurationType
   description?: string
-  details: string
+  details: DetailType
   horizontal?: boolean
   children?: ReactNode
 }
@@ -122,7 +123,7 @@ const ResumeListItem: React.FC<ResumeListItemProps> = ({
           {description}
         </div>
       )}
-      <div>{details}</div>
+      <RichText content={details.raw}></RichText>
     </ItemBody>
     {children}
   </Item>
