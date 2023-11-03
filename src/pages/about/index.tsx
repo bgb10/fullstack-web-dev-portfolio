@@ -17,6 +17,7 @@ const MainHeaderWrapper = styled.div`
 const MainHeaderContent = styled.h6`
   color: #666;
   font-weight: 400;
+  white-space: pre-line;
 `
 
 const Profile = styled.div`
