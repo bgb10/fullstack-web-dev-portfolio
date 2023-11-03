@@ -1,14 +1,21 @@
+import { ElementNode } from '@graphcms/rich-text-types'
+
 export interface DurationType {
   startedAt: Date
   endedAt?: Date
   isCompleted: boolean
 }
 
+export interface DetailType {
+  raw: {
+    children: ElementNode[]
+  }
+}
 export interface ExperienceType {
   company: string
   job: string
   duration: DurationType
-  details: string
+  details: DetailType
 }
 
 interface DegreeType {
