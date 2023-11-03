@@ -66,7 +66,7 @@ export default function About(props: Props) {
   return (
     <>
       <MainHeaderWrapper>
-        <Heading title="Gwan-Bin Park" description="Friendly, and Passionate">
+        <Heading title="Gwan-Bin Park" description="Friendly, and Passionate.">
           <MainHeaderContent>
             {data['introductions'][0]['description']}
           </MainHeaderContent>
