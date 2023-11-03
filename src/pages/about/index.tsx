@@ -28,9 +28,10 @@ const Profile = styled.div`
 
 const ProfileImg = styled.div`
   height: 500px;
-  background-image: url('https://newsimg-hams.hankookilbo.com/2022/04/20/44a2c4aa-84ea-4a89-b9a6-57ca3cf17bd8.jpg');
+  background-image: url('https://media.graphassets.com/vwK29XG1QFk6tpmAFKQD');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 `
 
 const query = gql`
