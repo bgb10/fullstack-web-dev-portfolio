@@ -40,8 +40,13 @@ export interface ProjectType {
   skills: SkillType
 }
 
+export interface SkillListType {
+  type: string
+  skills: SkillType[]
+}
+
 export interface SkillType {
-  name: string[]
+  name: string
   proficiency: number
 }
 
