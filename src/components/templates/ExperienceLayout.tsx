@@ -8,7 +8,7 @@ type ExperienceProps = {
 
 const ExperienceLayout = (props: ExperienceProps) => (
   <>
-    <Heading title="Experience" description="share my experience yeah!" />
+    <Heading title="Experience" description="Where, When and How I've worked" />
     {props.items.map((item, index) => (
       <ExperienceListItem key={index} {...item} />
     ))}

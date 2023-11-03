@@ -8,7 +8,7 @@ type EducationProps = {
 
 const EducationLayout = (props: EducationProps) => (
   <>
-    <Heading title="Education" description="share my education yeah!" />
+    <Heading title="Education" description="What I've Explored" />
     {props.items.map((item, index) => (
       <EducationListItem key={index} {...item} />
     ))}
