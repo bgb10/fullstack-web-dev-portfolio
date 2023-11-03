@@ -1,6 +1,5 @@
 import React from 'react'
 import EducationLayout from '@components/templates/EducationLayout'
-import { educationList } from 'src/data'
 import { gql, useQuery } from '@apollo/client'
 import stringToDateConverter from 'src/utils/stringToDateConverter'
 

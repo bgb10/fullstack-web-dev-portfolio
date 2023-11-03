@@ -1,6 +1,5 @@
 import React from 'react'
 import ProjectLayout from '@components/templates/ProjectLayout'
-import { projectList } from 'src/data'
 import { gql, useQuery } from '@apollo/client'
 import stringToDateConverter from 'src/utils/stringToDateConverter'
 
