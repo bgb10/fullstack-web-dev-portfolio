@@ -14,7 +14,7 @@ const query = gql`
       description
       skills {
         ... on Skill {
-          skill
+          name
         }
       }
     }

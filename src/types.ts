@@ -41,7 +41,8 @@ export interface ProjectType {
 }
 
 export interface SkillType {
-  skill: string[]
+  name: string[]
+  proficiency: number
 }
 
 export interface CourseWorkType {
