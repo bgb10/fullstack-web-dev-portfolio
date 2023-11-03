@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Heading from '@components/molecules/Heading'
+import { gql, useQuery } from '@apollo/client'
 
 type Props = {}
 
@@ -32,23 +33,25 @@ const ProfileImg = styled.div`
   background-repeat: no-repeat;
 `
 
-const about = (props: Props) => {
+const query = gql`
+  query introduction {
+    introduction(where: { id: "cloi8ce0c9hxf0a12wu4axih8" }) {
+      description
+    }
+  }
+`
+
+export default function About(props: Props) {
+  const { loading, error, data } = useQuery(query)
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error : {error.message}</p>
+
   return (
     <>
       <MainHeaderWrapper>
         <Heading title="Gwan-Bin Park">
           <MainHeaderContent>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-            natus. Tenetur odio aut eos aperiam? Ullam praesentium illo itaque
-            velit nulla eius incidunt, perspiciatis minus ipsum ab dolorum iste
-            quod necessitatibus, voluptatibus blanditiis animi asperiores. Ad
-            similique tempore sequi recusandae sapiente, rem, at dolor culpa
-            nihil aspernatur quia magni beatae deserunt? Temporibus esse vero
-            totam, molestias fuga laboriosam, perspiciatis voluptas minus hic
-            officiis id illo facilis possimus numquam! Ipsam nam at nemo
-            repudiandae necessitatibus velit sit alias excepturi asperiores odio
-            explicabo, sint fuga, natus facere numquam nesciunt maiores repellat
-            ut amet iste! Illum vel commodi at, consectetur ullam eaque aut.
+            {data['introduction']['description']}
           </MainHeaderContent>
         </Heading>
         <Profile>
@@ -58,5 +61,3 @@ const about = (props: Props) => {
     </>
   )
 }
-
-export default about
