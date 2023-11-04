@@ -40,8 +40,8 @@ export default function TimeLine({
   minDate = new Date('2021'),
   maxDate = new Date()
 }: TimeLineProps) {
-  const options = {
-    indexAxis: 'y',
+  const options: any = {
+    indexAxis: 'y' as 'y',
     responsive: true,
     plugins: {
       legend: {
