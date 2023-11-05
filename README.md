@@ -1,7 +1,5 @@
 # Portfolio website
 
-# Portfolio website
-
 > Created for applying Intel Software Engineer Intern 
 
 # Tech stack
