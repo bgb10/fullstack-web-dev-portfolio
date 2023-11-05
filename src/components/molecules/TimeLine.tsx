@@ -1,25 +1,10 @@
 'use client'
-import {
-  registerables,
-  Chart as ChartJS,
-  LinearScale,
-  PointElement,
-  Tooltip,
-  Legend,
-  TimeScale
-} from 'chart.js'
+import { registerables, Chart as ChartJS } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 import 'chartjs-adapter-date-fns'
 
 // Register ChartJS components using ChartJS.register
-ChartJS.register(
-  LinearScale,
-  PointElement,
-  Tooltip,
-  Legend,
-  TimeScale,
-  ...registerables
-)
+ChartJS.register(...registerables)
 
 export type TimeLineProps = {
   name: string
