@@ -1,6 +1,8 @@
 # Portfolio website
 
-Available in [here](https://portfolio-five-omega-99.vercel.app/about)!
+<img width="1510" alt="Screenshot 2023-11-05 at 9 28 36 PM" src="https://github.com/bgb10/portfolio/assets/25452313/e311798b-8476-488a-b6bc-917f6b7cce2a">
+
+Available in [here](https://portfolio-five-omega-99.vercel.app/about)
 
 # Features
 
