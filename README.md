@@ -1,48 +1,27 @@
-# hygraph-nextjs-blog-starter
+# Portfolio website
 
+# Portfolio website
 
-> A [Next.js](httsp://nextjs.org) starter for creating a basic blog with [Hygraph](https://hygraph.com)
+> Created for applying Intel Software Engineer Intern 
 
-## Quick start
+# Tech stack
 
-[![Clone project](https://hygraph.com/button)](https://app.hygraph.com/clone/ccfd3e465ed249d987b0dfc3f107d437?name=Basic%20Blog)
+- Frontend: Next.js, Chart.js, Graphql
+- Backend: Hygraph (GraphQL Headless CMS)
+- Language: Typescript
+- Deployed on Vercel
+- Tried to apply Gitflow, but I did it alone, so I didn't apply it rigorously.
 
+# Details
 
-1. **Clone and install the project**
+## Why Next.js?
 
-```shell
-npx degit git@github.com:hygraph/hygraph-nextjs-blog-starter.git
-```
+Next.js supports server-side rendering, which has an SEO advantage. I chose Next.js over React because of the nature of my portfolio is for self-advertisement, where SEO is important.
 
-2. **Provide your Hygraph project keys**
+## Why Hygraph?
 
-> In order to use this starter, you'll need to have created a new Hygraph project using our `Blog Template`.
+It is inefficient to build an RDB-based backend server to power a portfolio website. I don't need ACID, which is the biggest advantage of RDB, because only I will modify the information on the portfolio website. Also, I think I will change the portfolio structure frequently, and RDB is vulnerable to schema changes, and the corresponding API endpoints need to be rewritten. Therefore, I used Hygraph, a NoSQL-based platform that can write data in an unstructured format. This allows us to easily change the schema and access the data via graphql.
 
-Navigate into your new site’s directory and copy the `.env.sample` file.
+## Why Typescript?
 
-```shell
-cd hygraph-blog
-cp .env.sample .env.local
-```
-
-Inside of your newly created `.env` file, provide values for each variable. These variables can be found in the [project settings UI](https://hygraph.com/docs/guides/overview/api-access).
-
-```env
-HYGRAPH_ENDPOINT=""
-HYGRAPH_TOKEN=""
-```
-
-3. **Start building!**
-
-Install the dependencies and start the Next.js dev server:
-
-```shell
-npm install
-npm run dev
-```
-
-## Features
-* App Router
-* Tailwind CSS
-* Built-in 404 page functionality
-* `generateMetadata` for SEO
+Typescript is now a standard, not an option in JS project. With Typescript, things like autocomplete are supported and errors can be prevented at compile time. This makes life a lot easier. However, there are some things that don't work well with Hygraph. We use graphql to fetch data from Hygraph, which means we have to change the type definitions every time the query changes.
