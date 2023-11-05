@@ -19,7 +19,7 @@ const EducationLayout = (props: EducationProps) => {
 
   return (
     <>
-      <Heading title="Education" description="What I've Explored" />
+      <Heading title="Education" description="What I've explored" />
       <TimeLine
         name="Experience"
         elements={experiences}

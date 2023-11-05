@@ -8,7 +8,7 @@ type ProjectProps = {
 
 const ProjectLayout = (props: ProjectProps) => (
   <>
-    <Heading title="Project" description="share my project. see this yeah!" />
+    <Heading title="Project" description="What I've developed" />
     {props.items.map((item, index) => (
       <ProjectListItem key={index} {...item} />
     ))}
