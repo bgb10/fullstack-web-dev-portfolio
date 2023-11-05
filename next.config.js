@@ -7,6 +7,16 @@ const nextConfig = {
   experimental: {
     workerThreads: false,
     cpus: 1
+  },
+  // redirect
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/about',
+        permanent: true
+      }
+    ]
   }
 }
 
