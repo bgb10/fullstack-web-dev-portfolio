@@ -1,6 +1,12 @@
 # Portfolio website
 
-> Created for applying Intel Software Engineer Intern 
+Available in [here](https://portfolio-five-omega-99.vercel.app/about)!
+
+# Features
+
+- A responsive website that can be viewed on multiple devices
+- Visualize with charts for working periods, skill stats
+- Fetch portfolio data from DB(Hygraph)
 
 # Tech stack
 
