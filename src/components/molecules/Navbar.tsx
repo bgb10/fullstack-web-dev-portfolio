@@ -55,6 +55,25 @@ const MenuWrapper = styled.div<{ isOpen: boolean }>`
   }
 `
 
+const HamburgerIcon = styled.div`
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+
+  div {
+    width: 100%;
+    height: 2px;
+    background: #000;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`
+
 type NavbarProps = {
   links: MenuItemProps[]
 }
@@ -74,6 +93,11 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
 
   return (
     <NavbarWrapper>
+      <HamburgerIcon onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
+      </HamburgerIcon>
       <MenuWrapper isOpen={isOpen}>
         <Menu items={links} />
       </MenuWrapper>
