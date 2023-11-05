@@ -67,7 +67,7 @@ type ResumeListItemProps = {
   label?: string
   duration?: Date | DurationType
   description?: string
-  details: DetailType
+  details?: DetailType
   horizontal?: boolean
   children?: ReactNode
 }
@@ -123,7 +123,7 @@ const ResumeListItem: React.FC<ResumeListItemProps> = ({
           {description}
         </div>
       )}
-      <RichText content={details.raw}></RichText>
+      {details && <RichText content={details.raw}></RichText>}
     </ItemBody>
     {children}
   </Item>
