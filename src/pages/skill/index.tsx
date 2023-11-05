@@ -11,6 +11,9 @@ const query = gql`
           proficiency
         }
       }
+      details {
+        raw
+      }
       type
     }
   }
