@@ -1,21 +1,13 @@
 import ResumeListItem from '@components/organisms/ResumeListItem'
-import { SkillListType } from 'src/types'
+import { DetailType } from 'src/types'
 
-const SkillListItem: React.FC<SkillListType> = ({ type, skills }) => {
-  return (
-    <>
-      {skills.map((skill) => {
-        return (
-          <div key={skill.name}>
-            <div>
-              {skill.name}: {skill.proficiency}
-            </div>
-          </div>
-        )
-      })}
-      <div>{type}</div>
-    </>
-  )
+type SkillListItemProp = {
+  name: string
+  details: DetailType
 }
+
+const SkillListItem: React.FC<SkillListItemProp> = ({ name, details }) => (
+  <ResumeListItem title={name} details={details}></ResumeListItem>
+)
 
 export default SkillListItem
