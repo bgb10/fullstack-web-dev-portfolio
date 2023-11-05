@@ -1,5 +1,7 @@
 import { SkillListType } from 'src/types'
 import Heading from '@components/molecules/Heading'
+import SkillChartList from '@components/organisms/skill/SkillChartList'
+import Item from '@components/molecules/Item'
 import SkillListItem from '@components/organisms/skill/SkillListItem'
 
 type SkillListProps = {
@@ -8,10 +10,22 @@ type SkillListProps = {
 
 const SkillLayout = (props: SkillListProps) => (
   <>
-    <Heading title="Skills" description="share my experience yeah!" />
-    {props.items.map((item, index) => (
-      <SkillListItem key={index} {...item} />
-    ))}
+    <Heading title="Skills" description="How much Skillful in Tech" />
+    <Item horizontal={true}>
+      {props.items.map((item, index) => (
+        <SkillChartList key={index} {...item} />
+      ))}
+    </Item>
+
+    {props.items.map((item, index) => {
+      return (
+        <SkillListItem
+          key={index}
+          name={item.type}
+          details={item.details}
+        ></SkillListItem>
+      )
+    })}
   </>
 )
 
