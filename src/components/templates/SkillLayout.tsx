@@ -10,7 +10,7 @@ type SkillListProps = {
 
 const SkillLayout = (props: SkillListProps) => (
   <>
-    <Heading title="Skills" description="How much Skillful in Tech" />
+    <Heading title="Skills" description="How much skillful in Tech" />
     <Item horizontal={true}>
       {props.items.map((item, index) => (
         <SkillChartList key={index} {...item} />
