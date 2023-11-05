@@ -43,6 +43,7 @@ export interface ProjectType {
 export interface SkillListType {
   type: string
   skills: SkillType[]
+  details: DetailType
 }
 
 export interface SkillType {
